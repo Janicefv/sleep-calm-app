@@ -1,0 +1,139 @@
+:root {
+  --bg-top: #0b1026;
+  --bg-bottom: #23234f;
+  --surface: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: #f4f2ff;
+  --text-muted: #b9b6d6;
+  --accent: #a99bff;
+  --accent-hover: #c0b6ff;
+  --accent-text: #171534;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+.home {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  width: 28rem;
+  height: 28rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(169, 155, 255, 0.28), transparent 65%);
+  top: -10rem;
+  right: -8rem;
+  pointer-events: none;
+}
+
+.hero {
+  width: min(100%, 34rem);
+  padding: clamp(2rem, 6vw, 3.5rem);
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.hero__badge {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.hero__title {
+  margin-top: 1.5rem;
+  font-size: clamp(2.5rem, 9vw, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.hero__title span {
+  color: var(--accent);
+}
+
+.hero__tagline {
+  margin-top: 0.75rem;
+  font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+  font-weight: 600;
+}
+
+.hero__description {
+  margin: 1rem auto 0;
+  max-width: 26rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.hero__actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.button {
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.button--primary:hover {
+  background: var(--accent-hover);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.button--secondary:hover {
+  border-color: var(--accent);
+}
+
+.hero__note {
+  margin-top: 1.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
